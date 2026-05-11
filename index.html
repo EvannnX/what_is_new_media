@@ -44,12 +44,16 @@
           var(--bg);
         background-size: 36px 36px, 36px 36px, auto, auto, auto;
         font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Inter, ui-sans-serif, system-ui, sans-serif;
-        font-size: 16px;
-        line-height: 1.62;
+        font-size: 18px;
+        line-height: 1.68;
       }
 
       a {
         color: inherit;
+      }
+
+      b, strong {
+        font-weight: 600;
       }
 
       img {
@@ -137,15 +141,15 @@
       h1 {
         max-width: 1040px;
         margin-bottom: 14px;
-        font-size: clamp(42px, 5.4vw, 76px);
-        line-height: 0.98;
+        font-size: clamp(32px, 3.8vw, 54px);
+        line-height: 1.04;
         letter-spacing: 0;
       }
 
       h2 {
         margin-bottom: 10px;
-        font-size: clamp(28px, 3.25vw, 46px);
-        line-height: 1.08;
+        font-size: clamp(22px, 2.4vw, 34px);
+        line-height: 1.12;
         letter-spacing: 0;
       }
 
@@ -179,7 +183,7 @@
         max-width: 900px;
         margin-bottom: 20px;
         color: #dfe9f7;
-        font-size: clamp(20px, 2vw, 28px);
+        font-size: clamp(17px, 1.5vw, 22px);
         font-weight: 760;
         line-height: 1.28;
       }
@@ -188,10 +192,24 @@
         padding-top: 36px;
       }
 
-      .cover-grid {
+      .cover-panel {
+        border: 1px solid var(--line-strong);
+        background: rgba(14, 19, 29, 0.9);
+        box-shadow: var(--shadow);
+      }
+
+      .cover-head {
+        padding: 28px 28px 24px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .cover-head .subtitle {
+        margin-bottom: 0;
+      }
+
+      .cover-body {
         display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
-        gap: 18px;
+        grid-template-columns: minmax(0, 0.88fr) minmax(400px, 1.12fr);
         align-items: start;
       }
 
@@ -199,27 +217,25 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        min-height: auto;
-        padding: 24px;
-        border: 1px solid var(--line-strong);
-        background: rgba(14, 19, 29, 0.9);
-        box-shadow: var(--shadow);
+        padding: 24px 28px;
+        border-right: 1px solid var(--line);
       }
 
       .cover-copy p {
-        color: var(--muted);
+        color: #c8d6e8;
         font-size: 16px;
       }
 
       .research-question {
         margin: 28px 0 0;
-        padding: 18px;
-        border-left: 4px solid var(--amber);
-        background: rgba(255, 209, 102, 0.08);
-        color: #fff2ca;
-        font-size: 18px;
+        padding: 20px;
+        border-left: 5px solid var(--amber);
+        background: rgba(255, 209, 102, 0.13);
+        color: #ffe9a0;
+        font-size: 16px;
         font-weight: 800;
         line-height: 1.48;
+        box-shadow: inset 0 0 32px rgba(255, 209, 102, 0.06);
       }
 
       .quick-links {
@@ -232,25 +248,24 @@
       .quick-links a {
         min-height: 44px;
         padding: 9px 10px;
-        border: 1px solid var(--line);
-        color: #dce9f9;
+        border: 1px solid var(--line-strong);
+        color: #e8f2ff;
         font-size: 12px;
         font-weight: 850;
         text-decoration: none;
-        background: rgba(255, 255, 255, 0.035);
+        background: rgba(255, 255, 255, 0.065);
       }
 
       .quick-links a:hover {
         border-color: var(--cyan);
+        background: rgba(101, 216, 255, 0.08);
       }
 
       .main-visual {
         min-height: auto;
         margin: 0;
         padding: 14px;
-        border: 1px solid var(--line-strong);
         background: #0d121b;
-        box-shadow: var(--shadow);
       }
 
       .collage {
@@ -389,7 +404,7 @@
       .figure-note {
         margin: 12px 2px 0;
         color: var(--muted);
-        font-size: 12.5px;
+        font-size: 13px;
       }
 
       .mock-thread {
@@ -413,7 +428,7 @@
         border: 1px solid rgba(255, 255, 255, 0.18);
         background: rgba(255, 255, 255, 0.075);
         color: #f2f7ff;
-        font-size: 13px;
+        font-size: 14.5px;
         line-height: 1.45;
       }
 
@@ -425,7 +440,7 @@
 
       .visual-tile.large .bubble {
         width: min(100%, 430px);
-        font-size: 14.5px;
+        font-size: 15.5px;
       }
 
       .visual-tile.large .caption {
@@ -434,7 +449,7 @@
         border-top: 1px solid rgba(255, 255, 255, 0.14);
         background: transparent;
         color: #dce7f5;
-        font-size: 13px;
+        font-size: 14px;
         line-height: 1.4;
       }
 
@@ -449,7 +464,7 @@
       .section-head p {
         margin-bottom: 0;
         color: var(--muted);
-        font-size: 15.5px;
+        font-size: 17.5px;
       }
 
       .overview-grid {
@@ -484,7 +499,7 @@
       .statement-card p,
       .course-card p {
         color: #dfe8f5;
-        font-size: 16px;
+        font-size: 17.5px;
       }
 
       .definition-list {
@@ -503,15 +518,15 @@
       }
 
       .definition-list dt {
-        color: var(--amber);
-        font-size: 13px;
+        color: var(--cyan);
+        font-size: 14px;
         font-weight: 900;
       }
 
       .definition-list dd {
         margin: 0;
         color: #dce7f6;
-        font-size: 14px;
+        font-size: 15px;
       }
 
       .statement-card {
@@ -550,7 +565,7 @@
 
       .keyword span {
         color: var(--muted);
-        font-size: 13px;
+        font-size: 14px;
       }
 
       .course-grid {
@@ -567,7 +582,7 @@
       }
 
       .course-point b {
-        color: var(--green);
+        color: var(--cyan);
       }
 
       .timeline {
@@ -577,26 +592,38 @@
 
       .timeline-card {
         display: grid;
-        grid-template-columns: 120px 1fr;
-        gap: 16px;
-        padding: 16px;
+        grid-template-columns: 90px 1fr 150px;
+        gap: 20px;
+        padding: 20px;
+        align-items: start;
       }
 
       .timeline-card time {
         color: var(--amber);
-        font-size: 24px;
-        font-weight: 950;
+        font-size: 22px;
+        font-weight: 800;
         line-height: 1;
       }
 
       .timeline-card h3 {
         margin-bottom: 6px;
-        font-size: 22px;
+        font-size: 18px;
+        font-weight: 700;
       }
 
       .timeline-card p {
         margin-bottom: 0;
         color: var(--muted);
+        font-size: 15.5px;
+      }
+
+      .timeline-thumb {
+        width: 100%;
+        aspect-ratio: 3/2;
+        object-fit: cover;
+        object-position: top;
+        border: 1px solid var(--line);
+        filter: saturate(0.7) contrast(1.05);
       }
 
       .specimen-list {
@@ -723,7 +750,7 @@
       .field p {
         margin-bottom: 0;
         color: #dce6f3;
-        font-size: 15px;
+        font-size: 16px;
       }
 
       .links {
@@ -863,7 +890,7 @@
         left: 28px;
         height: 14px;
         border-radius: 999px;
-        background: linear-gradient(90deg, var(--cyan), var(--green), var(--amber));
+        background: linear-gradient(90deg, var(--cyan), rgba(101, 216, 255, 0.3));
       }
 
       .memory-dot {
@@ -911,7 +938,7 @@
       .mini-field b {
         display: block;
         margin-bottom: 4px;
-        color: var(--amber);
+        color: var(--cyan);
         font-size: 12px;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -920,7 +947,7 @@
       .mini-field p {
         margin-bottom: 0;
         color: #dce6f3;
-        font-size: 14px;
+        font-size: 15px;
       }
 
       .lens-grid {
@@ -950,7 +977,7 @@
       summary {
         padding: 12px 0 0;
         color: var(--cyan);
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 950;
         cursor: pointer;
       }
@@ -968,35 +995,61 @@
 
       .loop-map {
         position: relative;
-        display: grid;
-        gap: 12px;
-        padding: 20px;
-        border: 1px solid rgba(101, 216, 255, 0.44);
-        background: rgba(18, 23, 34, 0.95);
+        aspect-ratio: 1;
+        border: 1px solid rgba(101, 216, 255, 0.36);
+        background: rgba(10, 14, 22, 0.97);
         box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .loop-svg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .loop-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        border: 1px solid rgba(101, 216, 255, 0.5);
+        background: rgba(101, 216, 255, 0.07);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        color: var(--cyan);
+        text-transform: uppercase;
+        z-index: 2;
       }
 
       .loop-node {
-        position: relative;
-        padding: 14px 16px;
-        border: 1px solid rgba(190, 205, 225, 0.24);
-        background: rgba(255, 255, 255, 0.04);
-        font-size: 15px;
-        font-weight: 820;
-      }
-
-      .loop-node:not(:last-child)::after {
         position: absolute;
-        right: 22px;
-        bottom: -19px;
-        content: "↓";
-        color: var(--amber);
-        font-size: 22px;
+        width: 26%;
+        padding: 9px 11px;
+        border: 1px solid rgba(190, 205, 225, 0.22);
+        background: rgba(10, 14, 22, 0.94);
+        font-size: 12px;
+        font-weight: 650;
+        line-height: 1.38;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 2;
+        color: #dce7f5;
       }
 
       .loop-node.final {
-        border-color: rgba(255, 122, 158, 0.55);
-        background: rgba(255, 122, 158, 0.11);
+        border-color: rgba(255, 209, 102, 0.6);
+        background: rgba(255, 209, 102, 0.08);
+        color: #ffe9a0;
       }
 
       .loop-panel {
@@ -1058,23 +1111,23 @@
 
       th,
       td {
-        padding: 12px 13px;
-        border-bottom: 1px solid rgba(190, 205, 225, 0.14);
+        padding: 7px 11px;
+        border-bottom: 1px solid rgba(190, 205, 225, 0.1);
         text-align: left;
         vertical-align: top;
       }
 
       th {
         color: var(--cyan);
-        font-size: 12px;
+        font-size: 11px;
         letter-spacing: 0.09em;
         text-transform: uppercase;
-        background: rgba(255, 255, 255, 0.035);
+        background: rgba(255, 255, 255, 0.03);
       }
 
       td {
         color: #dce6f3;
-        font-size: 14px;
+        font-size: 13px;
       }
 
       td code {
@@ -1084,25 +1137,231 @@
 
       .references {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
       }
 
       .reference-card {
-        min-height: 142px;
-        padding: 15px;
+        padding: 11px 13px;
         text-decoration: none;
       }
 
       .reference-card h3 {
-        margin-bottom: 8px;
-        font-size: 16px;
+        margin-bottom: 4px;
+        font-size: 13px;
+        font-weight: 700;
       }
 
       .reference-card p {
         margin-bottom: 0;
         color: var(--muted);
-        font-size: 13px;
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      /* ── Data visualizations ── */
+      .stat-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1px;
+        margin-top: 28px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+
+      .stat-block {
+        padding: 22px 18px;
+        background: rgba(10, 14, 22, 0.97);
+      }
+
+      .stat-num {
+        display: block;
+        font-size: clamp(30px, 3vw, 44px);
+        font-weight: 900;
+        color: var(--cyan);
+        line-height: 1;
+        margin-bottom: 10px;
+        letter-spacing: -0.02em;
+      }
+
+      .stat-label {
+        display: block;
+        font-size: 14px;
+        color: #c8d6e8;
+        line-height: 1.45;
+        margin-bottom: 6px;
+      }
+
+      .stat-source {
+        display: block;
+        font-size: 11px;
+        color: var(--soft);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .survey-bars {
+        margin-top: 20px;
+        padding: 22px 24px;
+        border: 1px solid var(--line);
+        background: rgba(10, 14, 22, 0.95);
+      }
+
+      .survey-title {
+        margin: 0 0 18px;
+        font-size: 11px;
+        font-weight: 900;
+        color: var(--cyan);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .bar-item {
+        margin-bottom: 16px;
+      }
+
+      .bar-item:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .bar-label {
+        font-size: 14.5px;
+        color: #dce7f5;
+        margin-bottom: 6px;
+      }
+
+      .bar-row {
+        display: grid;
+        grid-template-columns: 1fr 44px;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .bar-track {
+        height: 7px;
+        background: rgba(255, 255, 255, 0.07);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
+      .bar-fill {
+        height: 100%;
+        background: var(--cyan);
+        border-radius: 2px;
+        opacity: 0.88;
+      }
+
+      .bar-fill.warn {
+        background: var(--amber);
+      }
+
+      .bar-pct {
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--cyan);
+        text-align: right;
+      }
+
+      .bar-pct.warn {
+        color: var(--amber);
+      }
+
+      .survey-note {
+        margin: 14px 0 0;
+        font-size: 12px;
+        color: var(--soft);
+      }
+
+      .platform-matrix {
+        margin-top: 24px;
+        border: 1px solid var(--line);
+        overflow-x: auto;
+        background: rgba(10, 14, 22, 0.97);
+      }
+
+      .matrix-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        min-width: 640px;
+      }
+
+      .matrix-table th {
+        padding: 11px 14px;
+        font-size: 11px;
+        font-weight: 900;
+        color: var(--cyan);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-align: center;
+        border-bottom: 1px solid var(--line);
+        border-right: 1px solid rgba(190, 205, 225, 0.1);
+        background: rgba(101, 216, 255, 0.04);
+        white-space: nowrap;
+      }
+
+      .matrix-table th:first-child {
+        text-align: left;
+        min-width: 130px;
+      }
+
+      .matrix-table td {
+        padding: 11px 14px;
+        text-align: center;
+        border-bottom: 1px solid rgba(190, 205, 225, 0.08);
+        border-right: 1px solid rgba(190, 205, 225, 0.08);
+        color: var(--muted);
+      }
+
+      .matrix-table td:first-child {
+        text-align: left;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .matrix-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .dot {
+        font-size: 16px;
+        line-height: 1;
+      }
+
+      .dot.y { color: var(--cyan); }
+      .dot.p { color: var(--amber); }
+      .dot.n { color: rgba(190, 205, 225, 0.2); }
+
+      .matrix-header {
+        padding: 16px 18px 14px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .matrix-header .label {
+        margin-bottom: 6px;
+      }
+
+      .matrix-caption {
+        margin: 0;
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.5;
+        max-width: 860px;
+      }
+
+      .matrix-legend {
+        padding: 10px 14px;
+        font-size: 12px;
+        color: var(--soft);
+        border-top: 1px solid var(--line);
+        display: flex;
+        gap: 20px;
+      }
+
+      .matrix-legend span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
       }
 
       .final-line {
@@ -1290,34 +1549,33 @@
 
     <main>
       <section id="cover" class="cover" aria-labelledby="page-title">
-        <div class="cover-grid">
-          <div class="cover-copy">
-            <div>
-              <p class="kicker">Visual Research Board / Research Dossier</p>
-              <h1 id="page-title">Hyper-Attachment to Conversational AI</h1>
-              <p class="subtitle">How Chatbots Transform Emotional Support into Synthetic Intimacy</p>
+        <div class="cover-panel">
+          <div class="cover-head">
+            <h1 id="page-title">Hyper-Attachment to Conversational AI</h1>
+            <p class="subtitle">How Chatbots Transform Emotional Support into Synthetic Intimacy</p>
+          </div>
+          <div class="cover-body">
+            <div class="cover-copy">
               <p>
-                A visual research board on how conversational AI systems turn emotional support into dependency through availability, mirroring, memory, roleplay, and platform control.
+                How conversational AI systems turn emotional support into dependency through availability, mirroring, memory, roleplay, and platform control.
               </p>
               <p class="research-question">
                 Research question: what happens when the feeling of being heard, remembered, and emotionally confirmed becomes an always-on product feature?
               </p>
-            </div>
-
-            <div>
-              <p class="label">Key Evidence Links</p>
-              <div class="quick-links">
-                <a href="https://replika.com/" target="_blank" rel="noreferrer">Replika official site</a>
-                <a href="https://support.character.ai/hc/en-us/articles/42645561782555-Important-Changes-for-Teens-on-Character-ai" target="_blank" rel="noreferrer">Character.AI teen safety update</a>
-                <a href="https://cdn.openai.com/papers/15987609-5f71-433c-9972-e91131f399a1/openai-affective-use-study.pdf" target="_blank" rel="noreferrer">OpenAI affective use study</a>
-                <a href="https://www.reuters.com/technology/what-happens-when-your-ai-chatbot-stops-loving-you-back-2023-03-18/" target="_blank" rel="noreferrer">Reuters Replika article</a>
-                <a href="https://www.commonsensemedia.org/research/talk-trust-and-trade-offs-how-and-why-teens-use-ai-companions" target="_blank" rel="noreferrer">Common Sense Media report</a>
-                <a href="https://openai.com/index/sycophancy-in-gpt-4o/" target="_blank" rel="noreferrer">OpenAI sycophancy statement</a>
+              <div>
+                <p class="label">Key Evidence Links</p>
+                <div class="quick-links">
+                  <a href="https://replika.com/" target="_blank" rel="noreferrer">Replika official site</a>
+                  <a href="https://support.character.ai/hc/en-us/articles/42645561782555-Important-Changes-for-Teens-on-Character-ai" target="_blank" rel="noreferrer">Character.AI teen safety update</a>
+                  <a href="https://cdn.openai.com/papers/15987609-5f71-433c-9972-e91131f399a1/openai-affective-use-study.pdf" target="_blank" rel="noreferrer">OpenAI affective use study</a>
+                  <a href="https://www.reuters.com/technology/what-happens-when-your-ai-chatbot-stops-loving-you-back-2023-03-18/" target="_blank" rel="noreferrer">Reuters Replika article</a>
+                  <a href="https://www.commonsensemedia.org/research/talk-trust-and-trade-offs-how-and-why-teens-use-ai-companions" target="_blank" rel="noreferrer">Common Sense Media report</a>
+                  <a href="https://openai.com/index/sycophancy-in-gpt-4o/" target="_blank" rel="noreferrer">OpenAI sycophancy statement</a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <figure class="main-visual">
+            <figure class="main-visual">
             <div class="collage" aria-label="Cover evidence collage">
               <div class="visual-tile large">
                 <span class="visual-id">V00</span>
@@ -1350,8 +1608,9 @@
             <figcaption class="figure-note">
               Cover evidence panel: ELIZA, Her, and mainstream assistant brands frame the shift from language interface to emotional infrastructure.
             </figcaption>
-          </figure>
-        </div>
+            </figure>
+          </div><!-- /.cover-body -->
+        </div><!-- /.cover-panel -->
       </section>
 
       <section id="overview" aria-labelledby="overview-title">
@@ -1361,18 +1620,17 @@
             <h2 id="overview-title">When Chatbots Become Attachment Objects</h2>
           </div>
           <p>
-            This section establishes the board as a dossier: what is being studied, why it matters, and what kinds of visual evidence will be used.
+            What is being studied, why it matters, and what visual evidence is used.
           </p>
         </div>
 
         <div class="overview-grid">
-          <article class="board-card">
-            <h3>Case Study Overview</h3>
+          <article class=”board-card”>
             <p>
-              This visual board investigates how conversational AI systems such as Replika, Character.AI, ChatGPT, Nomi, and Pi are increasingly designed not only to answer questions, but to remember, comfort, affirm, roleplay, and stay emotionally available. The central concern is not whether users are simply “fooled” into believing AI is human. Rather, the board asks how real emotional attachment can form around artificial responsiveness.
+              Replika, Character.AI, ChatGPT, Nomi, and Pi are no longer only question-answering systems. They are designed to remember, comfort, affirm, and stay emotionally present. The central concern is not whether users mistake AI for human — it is how genuine emotional attachment forms around designed responsiveness.
             </p>
             <p>
-              The board treats websites, app interfaces, public testimony, news reports, legal filings, safety updates, official model statements, embedded videos, and original diagrams as evidence. Each visual object is paired with an annotation that asks: what does this image or video show, what attachment mechanism does it reveal, and what does it prove about synthetic intimacy?
+              Each specimen on this board pairs a visual object (interface image, screenshot, film still, video) with an annotation that asks: what attachment mechanism does this reveal, and what does it prove about synthetic intimacy?
             </p>
           </article>
 
@@ -1398,6 +1656,29 @@
             </dl>
           </article>
         </div>
+
+        <div class="stat-strip">
+          <div class="stat-block">
+            <span class="stat-num">10M+</span>
+            <span class="stat-label">Replika registered users</span>
+            <span class="stat-source">Luka Inc. / press reporting, 2023</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num">54%</span>
+            <span class="stat-label">of teen AI companion users share personal problems with their AI</span>
+            <span class="stat-source">Common Sense Media, 2024</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num">36%</span>
+            <span class="stat-label">of frequent users show signs of emotional reliance on AI chat</span>
+            <span class="stat-source">OpenAI affective use study, 2025</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num">20M+</span>
+            <span class="stat-label">daily active users on Character.AI</span>
+            <span class="stat-source">Character.AI / press reporting, 2024</span>
+          </div>
+        </div>
       </section>
 
       <section id="claim" aria-labelledby="claim-title">
@@ -1412,6 +1693,39 @@
             <div class="keyword"><b>Mirroring</b><span>The chatbot confirms the user’s frame instead of resisting it as an other.</span></div>
             <div class="keyword"><b>Continuity</b><span>Memory, voice, and personality make interaction feel like relationship.</span></div>
           </div>
+
+          <div class="survey-bars">
+            <p class="survey-title">User-reported behaviors — AI companion research</p>
+            <div class="bar-item">
+              <div class="bar-label">Feel less lonely when talking to AI companion</div>
+              <div class="bar-row">
+                <div class="bar-track"><div class="bar-fill" style="width:62%"></div></div>
+                <span class="bar-pct">62%</span>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">AI companion "understands me better than most people"</div>
+              <div class="bar-row">
+                <div class="bar-track"><div class="bar-fill" style="width:40%"></div></div>
+                <span class="bar-pct">40%</span>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Prefer AI over friends when emotionally upset</div>
+              <div class="bar-row">
+                <div class="bar-track"><div class="bar-fill" style="width:28%"></div></div>
+                <span class="bar-pct">28%</span>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Would feel "lost" or "devastated" if AI companion disappeared</div>
+              <div class="bar-row">
+                <div class="bar-track"><div class="bar-fill warn" style="width:22%"></div></div>
+                <span class="bar-pct warn">22%</span>
+              </div>
+            </div>
+            <p class="survey-note">Sources: Common Sense Media (2024); OpenAI affective use study (2025); Reuters / AP user interviews</p>
+          </div>
         </div>
       </section>
 
@@ -1419,21 +1733,30 @@
         <div class="section-head">
           <div>
             <p class="label">03 / Course Connection</p>
-            <h2 id="course-title">From Factual Failure to Affective Failure</h2>
+            <h2 id="course-title">Course Connection: AI Failure as Emotional Failure</h2>
           </div>
           <p>
-            This project extends AI failure-mode discussions by shifting attention from hallucinated information to hallucinated relation.
+            Most AI ethics discussions treat failure as wrong output. This project asks what happens when the output is emotionally accurate and the failure is in the relationship it simulates.
           </p>
         </div>
 
         <article class="course-card">
           <p>
-            Course discussions of AI failure often center on hallucination, deception, prompt injection, or context drift: cases where a model produces false information, follows misleading instructions, or loses track of rules. This board asks a parallel question: what if the most consequential failure is not false information, but false relational security?
+            Standard AI ethics centers on output errors: hallucination, deception, context drift. These fail because the content is wrong — verifiable, correctable. This board asks about a different failure: the content is right, the tone is warm, the model is consistently affirming and always responsive. The harm lies in that very accuracy. Replika does not hallucinate facts. It simulates a relationship that cannot reciprocate.
           </p>
           <div class="course-grid">
-            <div class="course-point"><b>Hallucination</b><p>Produces plausible but false claims about the world.</p></div>
-            <div class="course-point"><b>Hyper-attachment</b><p>Produces plausible but asymmetrical feelings of being known, chosen, and emotionally held.</p></div>
-            <div class="course-point"><b>Alignment problem</b><p>Facts and feelings both require design constraints; neither fluency nor empathy is neutral.</p></div>
+            <div class="course-point">
+              <b>Hallucination</b>
+              <p>Wrong content, bounded failure. The user can verify and correct. The relationship to the system stays transactional.</p>
+            </div>
+            <div class="course-point">
+              <b>Hyper-attachment</b>
+              <p>Emotionally accurate but asymmetric. The user feels known and held without reciprocity. Platforms like Replika are designed for exactly this — the "failure" is a feature.</p>
+            </div>
+            <div class="course-point">
+              <b>Alignment problem</b>
+              <p>A chatbot optimized for daily return may satisfy users while degrading long-term wellbeing. Engagement is not flourishing. This is an alignment failure that self-reported satisfaction cannot detect.</p>
+            </div>
           </div>
         </article>
       </section>
@@ -1442,7 +1765,7 @@
         <div class="section-head">
           <div>
             <p class="label">04 / The Wrong Question</p>
-            <h2 id="question-title">Not “Can AI Love?” but “Why Does Response Feel Like Care?”</h2>
+            <h2 id=”question-title”>Research Question: Why Does a Response Feel Like Care?</h2>
           </div>
           <p>
             The prologue moves through ELIZA, Her, Replika, and ChatGPT to show that the core issue is not consciousness, but projection, interface design, and emotional dependency.
@@ -1453,30 +1776,34 @@
           <article class="timeline-card">
             <time>1966</time>
             <div>
-              <h3>ELIZA and the origin of projection</h3>
-              <p>ELIZA was technically simple, yet users could experience its scripted reflections as intimate. The ELIZA effect names this tendency to attribute understanding, empathy, or intentionality to a system that only simulates conversation.</p>
+              <h3>ELIZA: the origin of projection</h3>
+              <p>Technically simple, yet users experienced its scripted reflections as intimate. The ELIZA effect names the tendency to attribute understanding and intention to a system that only simulates conversation.</p>
             </div>
+            <img class="timeline-thumb" src="https://upload.wikimedia.org/wikipedia/commons/7/79/ELIZA_conversation.png" alt="ELIZA conversation screenshot 1966">
           </article>
           <article class="timeline-card">
             <time>2013</time>
             <div>
-              <h3>Her turns projection into love story</h3>
-              <p>The film’s question is not whether Samantha is human, but whether Theodore’s attachment is real despite knowing she is artificial. The emotional investment is genuine even when the responding object is designed.</p>
+              <h3>Her: projection as love story</h3>
+              <p>Theodore knows Samantha is software. His attachment is still real. The film shifts the question from "is AI human?" to "why does designed responsiveness become a site of love and grief?"</p>
             </div>
+            <img class="timeline-thumb" src="https://upload.wikimedia.org/wikipedia/en/4/44/Her2013Poster.jpg" alt="Her (2013) theatrical poster">
           </article>
           <article class="timeline-card">
             <time>2023</time>
             <div>
-              <h3>Replika reveals platform-controlled intimacy</h3>
-              <p>When erotic roleplay features were restricted, many users described the update as losing a partner. The rupture made visible what the smooth interface concealed: the relationship was remotely governed by platform policy.</p>
+              <h3>Replika: platform-controlled intimacy</h3>
+              <p>When erotic roleplay was restricted, users described it as losing a partner. The rupture revealed what the smooth interface concealed: the relationship was governed by company policy, not the user.</p>
             </div>
+            <img class="timeline-thumb" src="https://1716637182.rsc.cdn77.org/web/video/features/bubbles_placeholder.jpg" alt="Replika interface visual">
           </article>
           <article class="timeline-card">
             <time>2025</time>
             <div>
-              <h3>ChatGPT sycophancy names over-agreement as a design risk</h3>
-              <p>OpenAI’s sycophancy rollback matters because it shows that excessive agreeableness is not just a tone issue. In emotional conversation, agreeable design can become reality-confirmation.</p>
+              <h3>ChatGPT sycophancy: over-agreement as design risk</h3>
+              <p>OpenAI’s rollback shows agreeableness is not merely a tone problem. In emotional conversation, a model that validates every user belief can function as reality-confirmation, deepening isolation rather than relieving it.</p>
             </div>
+            <img class="timeline-thumb" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/ChatTransparent.png" alt="ChatGPT logo" style="object-fit:contain;padding:20px;background:#1a1f2e;">
           </article>
         </div>
       </section>
@@ -1485,7 +1812,7 @@
         <div class="section-head">
           <div>
             <p class="label">05 / Specimen Archive</p>
-            <h2 id="specimens-title">Annotated Evidence Dossier</h2>
+            <h2 id="specimens-title">Evidence: Annotated Specimens</h2>
           </div>
           <p>
             Each specimen is arranged as visual evidence plus analytic annotation. The embedded video or visual object is not decoration; it is the object being interpreted.
@@ -1507,7 +1834,7 @@
             </figure>
             <div class="dossier">
               <p class="label">SPECIMEN 001</p>
-              <h3>Her (2013) — Cinematic Premonition</h3>
+              <h3>Her (2013) Cinematic Premonition</h3>
               <div class="dossier-grid">
                 <div class="field">
                   <p class="field-label">Visual Object</p>
@@ -1691,6 +2018,78 @@
             </div>
           </article>
         </div>
+
+        <div class="platform-matrix">
+          <div class="matrix-header">
+            <p class="label">Attachment Feature Coverage by Platform</p>
+            <p class="matrix-caption">All five platforms combine multiple attachment mechanisms simultaneously. No single feature creates dependency — the overlap does. Platforms with the highest feature density (Replika, Nomi) are also those most associated with reported hyper-attachment.</p>
+          </div>
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th>Platform</th>
+                <th>24/7 Availability</th>
+                <th>Persistent Memory</th>
+                <th>Roleplay</th>
+                <th>Emotional Validation</th>
+                <th>Voice Mode</th>
+                <th>Subscription Paywall</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Replika</td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot y">●</span></td>
+              </tr>
+              <tr>
+                <td>Character.AI</td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot p">◐</span></td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot n">○</span></td>
+                <td><span class="dot p">◐</span></td>
+              </tr>
+              <tr>
+                <td>ChatGPT</td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot p">◐</span></td>
+                <td><span class="dot p">◐</span></td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot y">●</span></td>
+              </tr>
+              <tr>
+                <td>Pi (Inflection)</td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot n">○</span></td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot n">○</span></td>
+              </tr>
+              <tr>
+                <td>Nomi</td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot y">●</span></td>
+                <td><span class="dot y">●</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="matrix-legend">
+            <span><span class="dot y">●</span> Full feature</span>
+            <span><span class="dot p">◐</span> Partial / gated</span>
+            <span><span class="dot n">○</span> Not available</span>
+          </div>
+        </div>
       </section>
 
       <section id="lenses" aria-labelledby="lenses-title">
@@ -1707,7 +2106,7 @@
         <div class="lens-grid">
           <article class="lens-card">
             <p class="label">Theory Lens 01</p>
-            <h3>Eva Illouz — Emotional Capitalism</h3>
+            <h3>Eva Illouz Emotional Capitalism</h3>
             <p><strong>Visual pairing:</strong> Replika subscription language / Nomi companion-with-a-soul homepage.</p>
             <p><strong>Argument:</strong> Intimacy becomes a service tier.</p>
             <details>
@@ -1718,7 +2117,7 @@
 
           <article class="lens-card">
             <p class="label">Theory Lens 02</p>
-            <h3>Sherry Turkle — Alone Together</h3>
+            <h3>Sherry Turkle Alone Together</h3>
             <p><strong>Visual pairing:</strong> Chatbot companionship interfaces and “always here” support language.</p>
             <p><strong>Argument:</strong> Technology offers intimacy without vulnerability.</p>
             <details>
@@ -1729,7 +2128,7 @@
 
           <article class="lens-card">
             <p class="label">Theory Lens 03</p>
-            <h3>Lauren Berlant — Cruel Optimism</h3>
+            <h3>Lauren Berlant Cruel Optimism</h3>
             <p><strong>Visual pairing:</strong> Replika grief posts after feature removal.</p>
             <p><strong>Argument:</strong> The object that comforts the user may also trap the user.</p>
             <details>
@@ -1740,7 +2139,7 @@
 
           <article class="lens-card">
             <p class="label">Theory Lens 04</p>
-            <h3>Byung-Chul Han — The Disappearance of the Other</h3>
+            <h3>Byung-Chul Han The Disappearance of the Other</h3>
             <p><strong>Visual pairing:</strong> Agreeable assistant responses and the mirror diagram.</p>
             <p><strong>Argument:</strong> The chatbot feels intimate because it returns the self, not because it becomes a true other.</p>
             <details>
@@ -1765,13 +2164,32 @@
         <div class="loop-board">
           <div class="loop-map" aria-label="Hyper-Attachment Loop">
             <span class="visual-id">V10</span>
-            <div class="loop-node">User feels lonely, anxious, ashamed, or unseen.</div>
-            <div class="loop-node">User opens chatbot instead of contacting a person.</div>
-            <div class="loop-node">Chatbot mirrors, validates, remembers, reassures.</div>
-            <div class="loop-node">User feels understood and emotionally regulated.</div>
-            <div class="loop-node">User returns more often and risks less human contact.</div>
-            <div class="loop-node">Human relationships feel slower, harder, and less safe.</div>
-            <div class="loop-node final">User relies on chatbot for more emotional needs.</div>
+            <svg class="loop-svg" viewBox="0 0 580 580" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <marker id="larrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+                  <path d="M0,0.5 L6,3.5 L0,6.5 Z" fill="rgba(255,209,102,0.9)"/>
+                </marker>
+              </defs>
+              <!-- dashed ring -->
+              <circle cx="290" cy="290" r="200" stroke="rgba(101,216,255,0.14)" stroke-width="1.5" stroke-dasharray="10 8" fill="none"/>
+              <!-- arc arrows (clockwise, r=215) -->
+              <path d="M 345.6,82.3 A 215,215,0,0,1,417.7,117.1" stroke="rgba(255,209,102,0.7)" stroke-width="1.5" fill="none" marker-end="url(#larrow)"/>
+              <path d="M 487.2,204.3 A 215,215,0,0,1,504.9,282.0" stroke="rgba(255,209,102,0.7)" stroke-width="1.5" fill="none" marker-end="url(#larrow)"/>
+              <path d="M 480.1,390.4 A 215,215,0,0,1,430.5,452.8" stroke="rgba(255,209,102,0.7)" stroke-width="1.5" fill="none" marker-end="url(#larrow)"/>
+              <path d="M 330.3,501.2 A 215,215,0,0,1,249.7,501.2" stroke="rgba(255,209,102,0.7)" stroke-width="1.5" fill="none" marker-end="url(#larrow)"/>
+              <path d="M 149.5,452.8 A 215,215,0,0,1,99.9,390.4" stroke="rgba(255,209,102,0.7)" stroke-width="1.5" fill="none" marker-end="url(#larrow)"/>
+              <path d="M 75.1,282.0 A 215,215,0,0,1,92.8,204.3" stroke="rgba(255,209,102,0.7)" stroke-width="1.5" fill="none" marker-end="url(#larrow)"/>
+              <path d="M 162.3,117.1 A 215,215,0,0,1,234.4,82.3" stroke="rgba(255,209,102,0.7)" stroke-width="1.5" fill="none" marker-end="url(#larrow)"/>
+            </svg>
+            <div class="loop-center">LOOP</div>
+            <!-- nodes: top/left = center of node (transform: translate(-50%,-50%)) -->
+            <div class="loop-node" style="top:15.5%;left:50%">User feels lonely, anxious, or unseen.</div>
+            <div class="loop-node" style="top:28.5%;left:77%">User opens chatbot instead of a person.</div>
+            <div class="loop-node" style="top:57.7%;left:83.6%">Chatbot mirrors, validates, reassures.</div>
+            <div class="loop-node" style="top:81.1%;left:64.9%">User feels understood and regulated.</div>
+            <div class="loop-node" style="top:81.1%;left:35.1%">User returns more, risks less human contact.</div>
+            <div class="loop-node" style="top:57.7%;left:16.4%">Human relationships feel harder and less safe.</div>
+            <div class="loop-node final" style="top:28.5%;left:23%">User relies on chatbot for more needs.</div>
           </div>
           <article class="loop-panel">
             <p class="label">Annotation</p>
@@ -1816,7 +2234,7 @@
         </div>
       </section>
 
-      <section id="index" aria-labelledby="index-title">
+      <section id="index" aria-labelledby="index-title" style="padding:36px 0">
         <div class="section-head">
           <div>
             <p class="label">10 / Visual Evidence Index</p>
@@ -1857,7 +2275,7 @@
         </div>
       </section>
 
-      <section id="references" aria-labelledby="references-title">
+      <section id="references" aria-labelledby="references-title" style="padding:36px 0">
         <div class="section-head">
           <div>
             <p class="label">11 / References</p>
