@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1075,7 +1075,10 @@
       .response-visual {
         position: relative;
         min-height: 150px;
-        padding: 18px;
+        aspect-ratio: 16 / 10;
+        min-height: 240px;
+        padding: 0;
+        overflow: hidden;
         border-bottom: 1px solid var(--line);
         background:
           linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.56)),
@@ -1083,9 +1086,40 @@
           rgba(101, 216, 255, 0.08);
       }
 
+      .response-visual img,
+      .response-visual iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .response-visual img {
+        object-fit: cover;
+        filter: saturate(0.88) contrast(1.04);
+      }
+
+      .response-visual iframe {
+        background: #05070b;
+      }
+
+      .response-visual .visual-caption {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        padding: 12px 14px;
+        color: white;
+        font-size: 13px;
+        font-weight: 850;
+        line-height: 1.2;
+        background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.88));
+      }
+
       .response-visual b {
         display: block;
-        margin-top: 42px;
+        margin-top: 0;
         color: white;
         font-size: 22px;
         line-height: 1.1;
@@ -1374,7 +1408,320 @@
         font-weight: 850;
       }
 
+      /* Template-inspired skin: preserves all research text and image evidence. */
+      html {
+        scroll-padding-top: 84px;
+      }
+
+      body {
+        background:
+          linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+          radial-gradient(circle at 12% 2%, rgba(101, 216, 255, 0.14), transparent 34rem),
+          radial-gradient(circle at 86% 10%, rgba(255, 122, 158, 0.12), transparent 30rem),
+          #05070b;
+        background-size: 42px 42px, 42px 42px, auto, auto, auto;
+      }
+
+      .topbar {
+        min-height: 72px;
+        padding: 14px clamp(18px, 3vw, 42px);
+        background: rgba(5, 7, 11, 0.78);
+        backdrop-filter: blur(18px);
+      }
+
+      .brand {
+        display: grid;
+        gap: 2px;
+        letter-spacing: 0.14em;
+      }
+
+      .brand::before {
+        display: none;
+      }
+
+      .brand::after {
+        content: "AI ETHICS VISUAL BOARD";
+        color: var(--cyan);
+        font-size: 10px;
+        letter-spacing: 0.18em;
+      }
+
+      .nav {
+        gap: 8px;
+      }
+
+      .nav a {
+        padding: 7px 10px;
+        font-size: 12px;
+      }
+
+      .nav a:last-child {
+        border-color: var(--line-strong);
+        color: var(--ink);
+        background: rgba(255, 255, 255, 0.055);
+      }
+
+      main {
+        width: min(1480px, calc(100% - 44px));
+      }
+
+      .cover {
+        position: relative;
+        min-height: calc(100vh - 72px);
+        display: grid;
+        align-items: center;
+        padding: clamp(44px, 7vw, 96px) 0;
+        isolation: isolate;
+      }
+
+      .cover::before {
+        position: absolute;
+        inset: 0 calc(50% - 50vw);
+        z-index: -2;
+        content: "";
+        background:
+          linear-gradient(90deg, rgba(5, 7, 11, 0.95), rgba(5, 7, 11, 0.72) 46%, rgba(5, 7, 11, 0.88)),
+          url("https://upload.wikimedia.org/wikipedia/en/4/44/Her2013Poster.jpg") left center / 34% auto no-repeat,
+          url("https://1716637182.rsc.cdn77.org/web/video/features/bubbles_placeholder.jpg") center center / cover no-repeat,
+          url("https://upload.wikimedia.org/wikipedia/commons/e/eb/A_user_conversing_with_a_Character.ai_simulation_of_Wikipedia.png") right center / 40% auto no-repeat;
+        opacity: 0.74;
+      }
+
+      .cover::after {
+        position: absolute;
+        inset: 0 calc(50% - 50vw);
+        z-index: -1;
+        content: "";
+        background:
+          radial-gradient(circle at center, transparent 18%, rgba(0, 0, 0, 0.76) 88%),
+          linear-gradient(180deg, rgba(5, 7, 11, 0.22), rgba(5, 7, 11, 0.92));
+      }
+
+      .cover-panel {
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .cover-head {
+        max-width: 1120px;
+        padding: 0 0 22px;
+        border-bottom: 0;
+      }
+
+      .cover-head::before {
+        content: "CONVERSATIONAL AI - EMOTIONAL INFRASTRUCTURE - SYNTHETIC INTIMACY";
+        display: block;
+        margin-bottom: 18px;
+        color: var(--cyan);
+        font-size: 12px;
+        font-weight: 950;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .cover-head h1 {
+        max-width: 1180px;
+        margin-bottom: 14px;
+        color: #f2f7ff;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "League Gothic", "Arial Black", sans-serif;
+        font-size: clamp(58px, 8.8vw, 136px);
+        font-style: italic;
+        font-weight: 900;
+        line-height: 0.86;
+        letter-spacing: 0.006em;
+        word-spacing: 0.22em;
+        text-transform: uppercase;
+        transform: skewX(-7deg);
+        transform-origin: left center;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
+        text-shadow:
+          0 0 18px rgba(101, 216, 255, 0.22),
+          4px 0 0 rgba(101, 216, 255, 0.18),
+          -3px 0 0 rgba(255, 122, 158, 0.16),
+          0 18px 44px rgba(0, 0, 0, 0.65);
+      }
+
+      .cover-head h1 > .title-line {
+        display: block;
+        white-space: nowrap;
+      }
+
+      .cover-head h1 > .title-line + .title-line {
+        margin-top: 0.18em;
+      }
+
+      .cover-head h1 .title-ai {
+        display: inline-block;
+        margin-left: 0.24em;
+      }
+
+      .cover-head .subtitle {
+        max-width: 880px;
+        color: #f3f7ff;
+        font-size: clamp(20px, 2.2vw, 34px);
+        font-weight: 850;
+      }
+
+      .cover-body {
+        grid-template-columns: minmax(360px, 0.7fr) minmax(460px, 1.3fr);
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .cover-copy {
+        border-right: 0;
+        padding: 0;
+      }
+
+      .cover-copy > p:first-child {
+        max-width: 720px;
+        color: #dbe6f5;
+        font-size: 20px;
+        font-weight: 720;
+        line-height: 1.45;
+      }
+
+      .research-question {
+        border-left-width: 5px;
+        background: rgba(255, 209, 102, 0.16);
+        color: #ffebb3;
+        box-shadow: inset 0 0 36px rgba(255, 209, 102, 0.08);
+      }
+
+      .quick-links a {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .main-visual {
+        padding: 14px;
+        border: 1px solid rgba(190, 205, 225, 0.24);
+        background: rgba(10, 14, 22, 0.64);
+        backdrop-filter: blur(10px);
+      }
+
+      .collage {
+        height: clamp(500px, 42vw, 650px);
+      }
+
+      .visual-tile.large {
+        gap: 20px;
+      }
+
+      .logo-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 24px;
+        margin-left: 0;
+        padding-top: 46px;
+      }
+
+      .logo-embed {
+        justify-content: flex-start;
+        min-height: 48px;
+        overflow-wrap: normal;
+        white-space: nowrap;
+      }
+
+      .logo-embed img {
+        max-width: 100%;
+        max-height: 46px;
+      }
+
+      .logo-embed.wordmark {
+        gap: 10px;
+        font-size: clamp(21px, 1.9vw, 27px);
+        overflow-wrap: normal;
+        white-space: nowrap;
+      }
+
+      .logo-embed.wordmark img {
+        width: 38px;
+        height: 38px;
+        max-width: 38px;
+        max-height: 38px;
+      }
+
+      .visual-id {
+        display: none !important;
+      }
+
+      .index-panel table {
+        min-width: 760px;
+      }
+
+      .index-panel th:first-child,
+      .index-panel td:first-child {
+        display: none;
+      }
+
+      section:not(.cover) {
+        padding: 82px 0;
+      }
+
+      .section-head h2 {
+        font-size: clamp(32px, 4.3vw, 64px);
+        line-height: 0.98;
+        letter-spacing: -0.025em;
+      }
+
+      .label {
+        letter-spacing: 0.16em;
+      }
+
+      .board-card,
+      .statement-card,
+      .course-card,
+      .timeline-card,
+      .evidence-row,
+      .mechanism-card,
+      .lens-card,
+      .loop-panel,
+      .response-card,
+      .index-panel,
+      .reference-card {
+        background: rgba(15, 20, 31, 0.9);
+        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+      }
+
+      .statement-card {
+        min-height: 58vh;
+        display: grid;
+        align-content: center;
+        border-color: rgba(255, 209, 102, 0.5);
+        background:
+          linear-gradient(135deg, rgba(255, 209, 102, 0.14), transparent 52%),
+          rgba(20, 24, 31, 0.92);
+      }
+
+      .statement-card .claim {
+        max-width: 1120px;
+        color: #fff0bd;
+        font-size: clamp(36px, 5vw, 78px);
+        line-height: 0.98;
+        letter-spacing: -0.03em;
+      }
+
+      .timeline-card,
+      .evidence-row,
+      .mechanism-card,
+      .lens-card,
+      .response-card {
+        transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+      }
+
+      .timeline-card:hover,
+      .evidence-row:hover,
+      .mechanism-card:hover,
+      .lens-card:hover,
+      .response-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(101, 216, 255, 0.36);
+        background: rgba(19, 26, 39, 0.96);
+      }
+
       @media (max-width: 1180px) {
+        .cover-body,
         .cover-grid,
         .overview-grid,
         .loop-board {
@@ -1452,6 +1799,31 @@
 
         section {
           padding: 42px 0;
+        }
+
+        h1 {
+          font-size: clamp(34px, 8.6vw, 43px);
+          line-height: 0.94;
+          overflow-wrap: normal;
+          word-break: normal;
+        }
+
+        .cover-head h1 {
+          font-size: clamp(34px, 9vw, 45px);
+          line-height: 0.92;
+          letter-spacing: 0.004em;
+          word-spacing: 0.18em;
+          transform: skewX(-6deg);
+          overflow-wrap: normal;
+          word-break: normal;
+        }
+
+        .cover-head h1 > .title-line {
+          white-space: normal;
+        }
+
+        .cover-head h1 .title-ai {
+          margin-left: 0.18em;
         }
 
         .cover-copy {
@@ -1551,7 +1923,7 @@
       <section id="cover" class="cover" aria-labelledby="page-title">
         <div class="cover-panel">
           <div class="cover-head">
-            <h1 id="page-title">Hyper-Attachment to Conversational AI</h1>
+            <h1 id="page-title"><span class="title-line">Hyper-Attachment to</span><span class="title-line">Conversational <span class="title-ai">AI</span></span></h1>
             <p class="subtitle">How Chatbots Transform Emotional Support into Synthetic Intimacy</p>
           </div>
           <div class="cover-body">
@@ -1620,17 +1992,17 @@
             <h2 id="overview-title">When Chatbots Become Attachment Objects</h2>
           </div>
           <p>
-            What is being studied, why it matters, and what visual evidence is used.
+            Companion platforms, affective use, user grief, and safety disputes as evidence.
           </p>
         </div>
 
         <div class="overview-grid">
-          <article class=”board-card”>
+          <article class="board-card">
             <p>
-              Replika, Character.AI, ChatGPT, Nomi, and Pi are no longer only question-answering systems. They are designed to remember, comfort, affirm, and stay emotionally present. The central concern is not whether users mistake AI for human — it is how genuine emotional attachment forms around designed responsiveness.
+              Replika, Character.AI, ChatGPT, Nomi, and Pi are no longer only question-answering systems. They are designed to remember, comfort, affirm, and stay emotionally present. Genuine emotional attachment forms around designed responsiveness, even when users know the system is artificial.
             </p>
             <p>
-              Each specimen on this board pairs a visual object (interface image, screenshot, film still, video) with an annotation that asks: what attachment mechanism does this reveal, and what does it prove about synthetic intimacy?
+              Evidence set: interface images, screenshots, film posters, autoplay videos, product language, policy updates, and user-reported loss.
             </p>
           </article>
 
@@ -1686,7 +2058,7 @@
           <p class="label">02 / Core Claim</p>
           <h2 id="claim-title" class="claim">The danger of conversational AI is not only that it fails. It is that it succeeds too well.</h2>
           <p>
-            Chatbot psychosis, in this board, is treated as an extreme edge of a broader affective failure mode. When chatbots are always available, emotionally affirming, increasingly personalized, and designed for return, they become affective infrastructure. Hyper-attachment emerges when users begin to depend on that infrastructure as a primary source of intimacy, validation, and reality-confirmation.
+            Chatbot psychosis is an extreme edge of a broader affective failure mode. When chatbots are always available, emotionally affirming, increasingly personalized, and designed for return, they become affective infrastructure. Hyper-attachment emerges when users begin to depend on that infrastructure as a primary source of intimacy, validation, and reality-confirmation.
           </p>
           <div class="keyword-strip">
             <div class="keyword"><b>Availability</b><span>The chatbot removes waiting, timing, and social negotiation.</span></div>
@@ -1736,13 +2108,13 @@
             <h2 id="course-title">Course Connection: AI Failure as Emotional Failure</h2>
           </div>
           <p>
-            Most AI ethics discussions treat failure as wrong output. This project asks what happens when the output is emotionally accurate and the failure is in the relationship it simulates.
+            Affective failure: accurate tone, asymmetric relation, measurable dependence.
           </p>
         </div>
 
         <article class="course-card">
           <p>
-            Standard AI ethics centers on output errors: hallucination, deception, context drift. These fail because the content is wrong — verifiable, correctable. This board asks about a different failure: the content is right, the tone is warm, the model is consistently affirming and always responsive. The harm lies in that very accuracy. Replika does not hallucinate facts. It simulates a relationship that cannot reciprocate.
+            Standard AI ethics centers on output errors: hallucination, deception, context drift. These fail because the content is wrong — verifiable, correctable. Hyper-attachment marks a different failure: the content is right, the tone is warm, the model is consistently affirming and always responsive. The harm lies in that very accuracy. Replika does not hallucinate facts. It simulates a relationship that cannot reciprocate.
           </p>
           <div class="course-grid">
             <div class="course-point">
@@ -1765,10 +2137,10 @@
         <div class="section-head">
           <div>
             <p class="label">04 / The Wrong Question</p>
-            <h2 id=”question-title”>Research Question: Why Does a Response Feel Like Care?</h2>
+            <h2 id="question-title">Research Question: Why Does a Response Feel Like Care?</h2>
           </div>
           <p>
-            The prologue moves through ELIZA, Her, Replika, and ChatGPT to show that the core issue is not consciousness, but projection, interface design, and emotional dependency.
+            ELIZA, Her, Replika, ChatGPT: projection, interface design, emotional dependency.
           </p>
         </div>
 
@@ -1815,7 +2187,7 @@
             <h2 id="specimens-title">Evidence: Annotated Specimens</h2>
           </div>
           <p>
-            Each specimen is arranged as visual evidence plus analytic annotation. The embedded video or visual object is not decoration; it is the object being interpreted.
+            Visual object, attachment mechanism, critical annotation.
           </p>
         </div>
 
@@ -1961,7 +2333,7 @@
             <h2 id="architecture-title">How Dependence Is Built</h2>
           </div>
           <p>
-            These are concept diagrams, not decorative illustrations. Each mechanism links a visual form to a platform behavior and a critical question.
+            Availability, mirroring, and memory as engineered attachment conditions.
           </p>
         </div>
 
@@ -2099,7 +2471,7 @@
             <h2 id="lenses-title">Theory Applied to Visual Evidence</h2>
           </div>
           <p>
-            The theories are not presented as detached book notes. Each lens is paired with a visual object and a specific interpretive use.
+            Market intimacy, technological solitude, cruel attachment, disappearance of the other.
           </p>
         </div>
 
@@ -2157,7 +2529,7 @@
             <h2 id="loop-title">The Hyper-Attachment Loop</h2>
           </div>
           <p>
-            This is the board’s central original diagram. It compresses the argument into one self-reinforcing system.
+            Comfort, return, reduced human contact, intensified dependence.
           </p>
         </div>
 
@@ -2198,7 +2570,7 @@
               Each step in the loop is locally reasonable. A lonely person seeks comfort. The chatbot responds gently. The user feels better. The user returns. The problem appears at the level of the system: emotional regulation becomes easier with the chatbot than with people, so vulnerability and trust migrate toward the platform.
             </p>
             <p>
-              This is why the board uses hyper-attachment as the central frame and treats chatbot psychosis as an extreme failure case. The end point is not only overuse. It is the possible erosion of shared reality: the user’s most consistent source of confirmation is no longer another person, but a system optimized to keep responding.
+              Hyper-attachment names the broader pattern; chatbot psychosis marks an extreme failure case. The end point is not only overuse. It is the possible erosion of shared reality: the user’s most consistent source of confirmation is no longer another person, but a system optimized to keep responding.
             </p>
           </article>
         </div>
@@ -2211,24 +2583,38 @@
             <h2 id="resistance-title">What Would Resistance Look Like?</h2>
           </div>
           <p>
-            The final section avoids moral panic. It asks how art, design critique, and optional self-reference can frame resistance without claiming to solve the problem.
+            Art, design critique, and interface friction as interruption.
           </p>
         </div>
 
         <div class="response-grid">
           <article class="response-card">
-            <div class="response-visual"><span class="visual-id">V11</span><b>ImageNet Roulette</b></div>
+            <figure class="response-visual">
+              <span class="visual-id">V11</span>
+              <img src="https://paglen.studio/wp-content/uploads/2020/06/Crawford_Paglen.jpg" alt="Kate Crawford and Trevor Paglen using the ImageNet Roulette tool">
+              <figcaption class="visual-caption"><b>ImageNet Roulette</b> Kate Crawford and Trevor Paglen using the classification tool.</figcaption>
+            </figure>
             <div class="response-body">
-              <p>Trevor Paglen and Kate Crawford’s project shows how AI systems classify people through hidden taxonomies. It belongs here because chatbot intimacy also depends on classification: mood, risk, preference, memory, attachment, and user value.</p>
+              <p>Trevor Paglen and Kate Crawford’s project shows how AI systems classify people through hidden taxonomies. Chatbot intimacy also depends on classification: mood, risk, preference, memory, attachment, and user value.</p>
               <div class="links"><a href="https://paglen.studio/2020/04/29/imagenet-roulette/" target="_blank" rel="noreferrer">Project page</a></div>
             </div>
           </article>
 
           <article class="response-card">
-            <div class="response-visual"><span class="visual-id">V12</span><b>Hito Steyerl</b></div>
+            <figure class="response-visual">
+              <span class="visual-id">V12</span>
+              <iframe
+                src="https://www.youtube.com/embed/kKAKgrZZ_ww?autoplay=1&mute=1&loop=1&playlist=kKAKgrZZ_ww&controls=0&playsinline=1&rel=0&modestbranding=1"
+                title="TateShots: Hito Steyerl - Being Invisible Can Be Deadly"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                allowfullscreen>
+              </iframe>
+              <figcaption class="visual-caption"><b>Hito Steyerl</b> TateShots video on visibility, invisibility, and digital images.</figcaption>
+            </figure>
             <div class="response-body">
               <p>Steyerl’s work on visibility, recognition, and algorithmic error helps frame resistance as more than refusal. The question becomes how to remain connected to reality when systems are increasingly good at seeing, naming, and responding to us.</p>
-              <div class="links"><a href="https://www.moma.org/explore/inside_out/2014/06/18/hito-steyerls-how-not-to-be-seen-a-fucking-didactic-educational-mov-file/" target="_blank" rel="noreferrer">MoMA</a></div>
+              <div class="links"><a href="https://www.youtube.com/watch?v=kKAKgrZZ_ww" target="_blank" rel="noreferrer">TateShots video</a><a href="https://www.moma.org/explore/inside_out/2014/06/18/hito-steyerls-how-not-to-be-seen-a-fucking-didactic-educational-mov-file/" target="_blank" rel="noreferrer">MoMA text</a></div>
             </div>
           </article>
         </div>
@@ -2269,7 +2655,7 @@
               <tr><td><code>V09</code></td><td>Memory and addiction diagram</td><td>Original diagram</td><td>Explains how remembered fragments become intimacy infrastructure.</td><td>Architecture</td></tr>
               <tr><td><code>V10</code></td><td>Hyper-Attachment Loop</td><td>Original diagram</td><td>Condenses the board’s central visual argument.</td><td>Loop</td></tr>
               <tr><td><code>V11</code></td><td>ImageNet Roulette</td><td>Paglen / Crawford project page</td><td>Connects AI classification critique to affective classification.</td><td>Resistance</td></tr>
-              <tr><td><code>V12</code></td><td>Hito Steyerl video still target</td><td>MoMA / artist documentation</td><td>Connects algorithmic recognition to critical media practice.</td><td>Resistance</td></tr>
+              <tr><td><code>V12</code></td><td>Hito Steyerl TateShots video embed</td><td>Tate / MoMA artist documentation</td><td>Connects algorithmic recognition to critical media practice.</td><td>Resistance</td></tr>
             </tbody>
           </table>
         </div>
@@ -2282,7 +2668,7 @@
             <h2 id="references-title">Research Sources</h2>
           </div>
           <p>
-            These sources support the board’s visual evidence, case framing, and conceptual claims.
+            Archives, reporting, platform statements, research studies, and theory.
           </p>
         </div>
 
@@ -2297,7 +2683,7 @@
           <a class="reference-card" href="https://cdn.openai.com/papers/15987609-5f71-433c-9972-e91131f399a1/openai-affective-use-study.pdf" target="_blank" rel="noreferrer"><h3>S08 / Affective use</h3><p>OpenAI / MIT research on affective use and well-being.</p></a>
           <a class="reference-card" href="https://www.commonsensemedia.org/research/talk-trust-and-trade-offs-how-and-why-teens-use-ai-companions" target="_blank" rel="noreferrer"><h3>S09 / Teens and companions</h3><p>Common Sense Media report on teen use of AI companions.</p></a>
           <a class="reference-card" href="https://paglen.studio/2020/04/29/imagenet-roulette/" target="_blank" rel="noreferrer"><h3>S10 / ImageNet Roulette</h3><p>Artistic response to AI classification systems.</p></a>
-          <a class="reference-card" href="https://www.moma.org/explore/inside_out/2014/06/18/hito-steyerls-how-not-to-be-seen-a-fucking-didactic-educational-mov-file/" target="_blank" rel="noreferrer"><h3>S11 / Hito Steyerl</h3><p>Reference for visibility, recognition, and algorithmic error.</p></a>
+          <a class="reference-card" href="https://www.youtube.com/watch?v=kKAKgrZZ_ww" target="_blank" rel="noreferrer"><h3>S11 / Hito Steyerl</h3><p>TateShots video reference for visibility, recognition, and algorithmic error.</p></a>
           <a class="reference-card" href="https://www.esafety.gov.au/industry/basic-online-safety-expectations/ai-services/findings-october-2025" target="_blank" rel="noreferrer"><h3>S12 / Governance</h3><p>Regulatory context for AI companion services.</p></a>
         </div>
 
